@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css"; 
 import { BrowserRouter as Router, Route } from "react-router-dom"; 
-import Home from './components/pages/Home.js';
-import User from './components/pages/User.js';
+import Home from './pages/Home.js';
+import User from './pages/User.js';
 import TopNav from './components/TopNav.js'  
 
 function App() {

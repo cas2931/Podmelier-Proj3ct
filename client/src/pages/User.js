@@ -12,10 +12,13 @@ function User() {
         </div>
     </div> 
   
-  <article className="grid-container" style={{backgroundImage: "url('./images/BlownAway.jpg')",
+  <article className="grid-container fluid" style={{backgroundImage: "url('./images/BlownAway.jpg')",
            backgroundPosition: 'center',
            backgroundSize: 'cover',
-           backgroundRepeat: 'no-repeat',
+           backgroundRepeat: 'no-repeat', 
+           WebkitBackgroundSize:'cover', 
+           MozBackgroundSize:'cover', 
+           OBackgroundSize:'cover', 
          }}>  
   
   <br/>
@@ -51,7 +54,11 @@ function User() {
    </div>
   </div> 
   
-  </article> 
+  </article>   
+
+  <div className="columns shrink footer text-center" style={{backgroundColor: 'black'}}>
+  <img src='.\images\Spotify_Logo_RGB_White.png' alt='Spotify' width='100%' height='auto'/>
+</div>  
     </div>
     );
   } 
