@@ -16,7 +16,7 @@ function TopNav() {
       <div className="grid-x">  
 
         <div className="cell small-4">
-         <img src='./images/podButler.jpg' alt='Podmelier butler' width='100%'/>
+         <img src='./images/podButler2.png' alt='Podmelier butler' width='100%'/>
         </div>
 
         <div className="cell small-4">
@@ -37,7 +37,7 @@ function TopNav() {
         </div> 
 
     <div className="cell small-4"> 
-    <img src='./images/revButler.jpg' alt='Reverse butler' width='100%'/>
+    <img src='./images/revButler2.png' alt='Reverse butler' width='100%'/>
     </div>
   </div>
     

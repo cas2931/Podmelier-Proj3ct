@@ -2,7 +2,6 @@ import React from "react";
 import "./home.css"; 
 // import LNAPI from "../utils/LNAPI.js";  
 import SignupForm from '../components/SignupForm' 
-// import amber from '@material-ui/core/colors/amber';
 
 function Home ()  {   
 
@@ -12,7 +11,8 @@ function Home ()  {
 
   // componentDidMount() {
   //   LNAPI.getAllGenres()
-  //     .then(res => this.setState({ genres: res.data.genre.id }))
+  //     .then(res => this.setState({ genres: res.data.genre.id })) 
+  // for (i = 0; i < genres.length; i++) {
 
   return (   
 <div>
@@ -71,7 +71,7 @@ function Home ()  {
   <div className="grid-x"> 
 
     <div className="cell small-8">
-      <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' width='auto' height='auto'/>
+      <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' style={{verticalAlign: 'bottom', width: 'auto', height:'auto'}}/>
     </div>
 
     <div className="cell small-4">
