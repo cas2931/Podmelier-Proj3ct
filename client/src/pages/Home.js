@@ -1,31 +1,24 @@
-import React from "react";  
+import React from "react"; 
 import "./home.css"; 
 // import LNAPI from "../utils/LNAPI.js";  
-import SignupForm from '../components/SignupForm' 
+import SignupForm from '../components/SignupForm'; 
+import ListenNoteResults from '../components/ListenNoteResults'
 
-function Home ()  {   
+function Home() {   
 
-  // state = {
-  //   genres: [], 
-  // };  
+  state = {
+    genres: [], 
+  };  
 
-  // componentDidMount() {
-  //   LNAPI.getAllGenres()
-  //     .then(res => this.setState({ genres: res.data.genre.id })) 
-  // for (i = 0; i < genres.length; i++) {
-
+  componentDidMount() {
+    LNAPI.getAllGenres()
+        .then( res => this.setState({ genres: res.body.genres}))
+        .catch(err => console.error(err));
+}
+// for (i = 0; i < genres.length; i++) {
+//     render() { 
   return (   
 <div>
-
-{/* <div className="callout large primary" style={{backgroundColor: 'darkred' }}> 
-  <div class="grid-x grid-margin-x"> 
-    <div class="cell small-12">
-      <div className="text-center">
-      
-  </div>  
-  </div> 
-  </div> 
-  </div> */}
 
 <div className="columns sticky-footer-css-body text-center" style={{backgroundImage: "url('./images/BlownAway.jpg')",
            backgroundPosition: 'center',
@@ -36,34 +29,37 @@ function Home ()  {
            OBackgroundSize:'cover', 
          }}>
 
- <div className="row">
+<br/>
+<ListenNoteResults></ListenNoteResults>
+
+ {/* <div className="row">
   <div className="grid-x align-center">
    <div className="cell medium-8">
     <h3>Podcast GridList</h3>  
     </div>
    </div>
-  </div>
+  </div> */}
  
 <br/> 
 
-<div className="row">
+{/* <div className="row">
   <div className="grid-x align-center">
    <div className="cell medium-8">
     <h3>Podcast GridList</h3>  
     </div>
    </div>
-  </div>
+  </div> */}
 
 
 <br/>
 
-<div className="row">
+{/* <div className="row">
   <div className="grid-x align-center">
    <div className="cell medium-8">
     <h3>Podcast GridList</h3>  
     </div>
    </div>
-  </div> 
+  </div>  */}
 
   </div> 
 
@@ -71,17 +67,16 @@ function Home ()  {
   <div className="grid-x"> 
 
     <div className="cell small-8">
-      <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' style={{verticalAlign: 'bottom', width: 'auto', height:'auto'}}/>
+      <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' width='100%' height='auto'/>
     </div>
 
-    <div className="cell small-4">
+    <div className="cell auto">
          <SignupForm></SignupForm>
     </div>
   </div>
 </div>  
 
 </div> 
-  )
-        } 
-  
+  ) 
+}
 export default Home;

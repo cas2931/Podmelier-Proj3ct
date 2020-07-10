@@ -15,11 +15,11 @@ function TopNav() {
     <div className="row expanded flex-dir-column"> 
       <div className="grid-x">  
 
-        <div className="cell small-4">
-         <img src='./images/podButler2.png' alt='Podmelier butler' width='100%'/>
+        <div className="cell auto">
+         <img src='./images/podButler2.png' alt='Podmelier butler' width='100%' height='auto'/>
         </div>
 
-        <div className="cell small-4">
+        <div className="cell auto">
           <div className="columns shrink header text-center">
             <p>The Podcast Directory for Discretionary Taste</p>
             <ul className="menu align-center">
@@ -36,8 +36,8 @@ function TopNav() {
           </div>
         </div> 
 
-    <div className="cell small-4"> 
-    <img src='./images/revButler2.png' alt='Reverse butler' width='100%'/>
+    <div className="cell auto"> 
+    <img src='./images/revButler2.png' alt='Reverse butler'width='100%' height='auto'/>
     </div>
   </div>
     
