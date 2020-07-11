@@ -1,22 +1,22 @@
 import React from "react"; 
-import "./home.css"; 
+import "./home.css"; import ListenNoteResults from '../components/ListenNoteResults'
 // import LNAPI from "../utils/LNAPI.js";  
 import SignupForm from '../components/SignupForm'; 
-import ListenNoteResults from '../components/ListenNoteResults'
+// import ListenNoteResults from '../components/ListenNoteResults'
 
 function Home() {   
 
-  state = {
-    genres: [], 
-  };  
+//   state = {
+//     genres: [], 
+//   };  
 
-  componentDidMount() {
-    LNAPI.getAllGenres()
-        .then( res => this.setState({ genres: res.body.genres}))
-        .catch(err => console.error(err));
-}
-// for (i = 0; i < genres.length; i++) {
-//     render() { 
+//   componentDidMount() {
+//     LNAPI.getAllGenres()
+//         .then( res => this.setState({ genres: res.body.genres}))
+//         .catch(err => console.error(err));
+// }
+// // for (i = 0; i < genres.length; i++) {
+// //     render() { 
   return (   
 <div>
 

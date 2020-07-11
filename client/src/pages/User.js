@@ -4,11 +4,12 @@ import "./user.css"
 function User() {
   return (
     <div>
-    <div className="callout large primary">
+    <div className="callout large" style={{backgroundColor: 'darkred'}}>
        <div className="text-center">
-        <h1>Podmelier</h1>
+        {/* <h1>Podmelier</h1>
         <h2 className="subheader">[Pronounced Pod-Molly-Yay!]</h2> 
-        <h2 className="subheader">A Podcast Directory for Discretionary Taste</h2>
+        <h2 className="subheader">A Podcast Directory for Discretionary Taste</h2> */} 
+        Search Form
         </div>
     </div> 
   
@@ -23,14 +24,6 @@ function User() {
   
   <br/>
   
-   <div className="row">
-    <div className="grid-x align-center">
-     <div className="cell medium-8"> 
-      <h3>Search Form Div</h3> 
-
-     </div>
-    </div> 
-   </div>
   
    <br/>
   
