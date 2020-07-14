@@ -2,6 +2,7 @@ import React from "react";
 import "./home.css"; import ListenNoteResults from '../components/ListenNoteResults'
 // import LNAPI from "../utils/LNAPI.js";  
 import SignupForm from '../components/SignupForm'; 
+import LoginForm from '../components/LoginForm'; 
 // import ListenNoteResults from '../components/ListenNoteResults'
 
 function Home() {   
@@ -32,46 +33,32 @@ function Home() {
 <br/>
 <ListenNoteResults></ListenNoteResults>
 
- {/* <div className="row">
-  <div className="grid-x align-center">
-   <div className="cell medium-8">
-    <h3>Podcast GridList</h3>  
-    </div>
-   </div>
-  </div> */}
+ 
  
 <br/> 
 
-{/* <div className="row">
-  <div className="grid-x align-center">
-   <div className="cell medium-8">
-    <h3>Podcast GridList</h3>  
-    </div>
-   </div>
-  </div> */}
+
 
 
 <br/>
 
-{/* <div className="row">
-  <div className="grid-x align-center">
-   <div className="cell medium-8">
-    <h3>Podcast GridList</h3>  
-    </div>
-   </div>
-  </div>  */}
+
 
   </div> 
 
-<div className="columns shrink footer text-center" style={{backgroundColor: 'black'}}> 
+<div className="columns shrink sticky-footer text-center" style={{backgroundColor: 'black'}}> 
   <div className="grid-x"> 
 
-    <div className="cell small-8">
-      <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' width='100%' height='auto'/>
+     <div className="cell auto text-center">
+         <SignupForm></SignupForm>
+    </div> 
+
+    <div className="cell auto">
+      <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' top='0' bottom='0'/>
     </div>
 
     <div className="cell auto">
-         <SignupForm></SignupForm>
+         <LoginForm></LoginForm>
     </div>
   </div>
 </div>  

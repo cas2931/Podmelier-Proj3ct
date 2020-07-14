@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";  
-import LoginForm from '../components/LoginForm';
 
 
 function TopNav() {
@@ -10,13 +9,16 @@ function TopNav() {
   const location = useLocation();
     return (
 <div>
-  <div className="sticky-footer-css" style={{backgroundColor: 'black'}}> 
+  <div className="fixed-footer-css fluid" style={{backgroundColor: 'black'}}> 
 
     <div className="row expanded flex-dir-column"> 
       <div className="grid-x">  
 
         <div className="cell auto">
-         <img src='./images/podButler2.png' alt='Podmelier butler' width='100%' height='auto'/>
+         <img src='./images/podButler2.png' alt='Podmelier butler' style={{flex: 1,
+          width: '100%',
+          height: '100%',
+          resizeMode: 'cover'}}/>
         </div>
 
         <div className="cell auto">
@@ -31,14 +33,15 @@ function TopNav() {
                 </Link></li>
             </ul>
           </div> 
-          <div className="columns shrink header text-center"> 
-          <LoginForm></LoginForm> 
-          </div>
+        
         </div> 
 
-    <div className="cell auto"> 
-    <img src='./images/revButler2.png' alt='Reverse butler'width='100%' height='auto'/>
-    </div>
+        <div className="cell auto">
+          <img src='./images/revButler2.png' alt='Reverse butler' style={{flex: 1,
+            width: '100%',
+            height: '100%',
+            resizeMode: 'cover'}}/>
+        </div>
   </div>
     
   </div> 

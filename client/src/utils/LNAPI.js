@@ -1,6 +1,6 @@
-import axios from "axios";
+require('dotenv').config() 
 
-// Export an object containing methods we'll use for accessing the Dog.Ceo API
+import axios from "axios";
 
 export default {
 
@@ -10,7 +10,7 @@ export default {
         .header(process.env.REACT_APP_LN_KEY);
       }, 
     getTopLists: function() {
-        return axios.get('https://listen-api.listennotes.com/api/v2/best_podcasts?genre_id='+ id+ '&page=2&region=us&safe_mode=0')
+        return axios.get('https://listen-api.listennotes.com/api/v2/best_podcasts?genre_id='+ id + '&page=2&region=us&safe_mode=0')
         .header(process.env.REACT_APP_LN_KEY);
       }, 
   }

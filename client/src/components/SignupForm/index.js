@@ -14,36 +14,33 @@ render() {
          container  
          spacing={0}  
          direction="column"  
+         alignContent='center'   
          alignItems="flex-start"  
          justify="middle"  
          style={{ minHeight: 'auto' }}  
          >  
-   <Typography component="h1" variant="h5" color='primary'>  
+   <Typography component="h1" variant="h5" color='secondary' align='center'>  
       Sign Up/Register  
    </Typography>  
    <form onSubmit={this.handleLogin}>  
    <TextField 
-      id="outlined-basic"
-      variant="standard"  
-      margin="normal"  
-      fullWidth  
-      label="Email Address"  
+      id="email"
+      label="Email"
+      variant="filled" 
+      type="text" 
    />  
-   <TextField   
-      id="outlined-basic"
-      variant="standard"  
-      margin="normal"  
-      fullWidth  
-      label="Password"  
+   <TextField  
+      id="standard-password-input"
+      label="Password"
       type="password"   
+      variant="filled"  
    />  
    <Button  
-      type="submit"  
-      fullWidth  
+      type="submit"   
       variant="contained"  
-      color="primary"  
+      color="secondary"  
       >  
-      Log In  
+      Sign Up 
       </Button>  
    </form>  
   </Grid>  

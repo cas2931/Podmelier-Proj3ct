@@ -49,8 +49,8 @@ function User() {
   
   </article>   
 
-  <div className="columns shrink footer text-center" style={{backgroundColor: 'black'}}>
-  <img src='.\images\Spotify_Logo_RGB_White.png' alt='Spotify' width='100%' height='auto'/>
+  <div className="columns shrink sticky-footer text-center" style={{backgroundColor: 'black'}}>
+  <img src='.\images\Spotify_Logo_RGB_White.png' alt='Spotify' width='100%' height='50%'/>
 </div>  
     </div>
     );
