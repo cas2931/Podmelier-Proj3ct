@@ -1,21 +1,12 @@
 import React from "react"; 
-import "./home.css"; import ListenNoteResults from '../components/ListenNoteResults'
-// import LNAPI from "../utils/LNAPI.js";  
+import "./home.css";  
 import SignupForm from '../components/SignupForm'; 
-import LoginForm from '../components/LoginForm'; 
-// import ListenNoteResults from '../components/ListenNoteResults'
+import LoginForm from '../components/LoginForm';  
+import ListenNoteContainer from '../components/ListenNoteContainer'
 
 function Home() {   
 
-//   state = {
-//     genres: [], 
-//   };  
 
-//   componentDidMount() {
-//     LNAPI.getAllGenres()
-//         .then( res => this.setState({ genres: res.body.genres}))
-//         .catch(err => console.error(err));
-// }
 // // for (i = 0; i < genres.length; i++) {
 // //     render() { 
   return (   
@@ -31,7 +22,7 @@ function Home() {
          }}>
 
 <br/>
-<ListenNoteResults></ListenNoteResults>
+<ListenNoteContainer> </ListenNoteContainer>
 
  
  
