@@ -2,21 +2,21 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "passport_demo",
+    "database": "podmelier_db",
     "host": "127.0.0.1",
     "dialect": "mongodb"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "podmelier_db",
     "host": "127.0.0.1",
     "dialect": "mongodb"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "podmelier_db",
     "host": "127.0.0.1",
     "dialect": "mongodb"
   }

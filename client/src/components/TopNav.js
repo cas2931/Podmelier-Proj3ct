@@ -12,16 +12,27 @@ function TopNav() {
   <div className="fixed-footer-css fluid" style={{backgroundColor: 'black'}}> 
 
     <div className="row expanded flex-dir-column"> 
-      <div className="grid-x">  
+      <div className="grid-x auto">  
 
-        <div className="cell auto">
-         <img src='./images/podButler2.png' alt='Podmelier butler' style={{flex: 1,
+        <div className="cell auto" style={{backgroundImage: "url('./images/podButler2.png')",
+           width: '100%',
+           height: '500px',
+           backgroundPosition: 'center',
+           backgroundSize: 'cover',
+           backgroundRepeat: 'no-repeat',   
+         }}>
+         {/* <img src='./images/podButler2.png' alt='Podmelier butler' style={{flex: 1,
           width: '100%',
           height: '100%',
-          resizeMode: 'cover'}}/>
+          resizeMode: 'cover'}}/> */}
         </div>
 
-        <div className="cell auto">
+        <div className="cell auto" style={{backgroundImage: "url('./images/BlownAway.jpg')",
+           backgroundPosition: 'center',
+           backgroundSize: 'cover',
+           backgroundRepeat: 'no-repeat',  
+        }}> 
+
           <div className="columns shrink header text-center">
             <p>The Podcast Directory for Discretionary Taste</p>
             <ul className="menu align-center">
@@ -36,11 +47,17 @@ function TopNav() {
         
         </div> 
 
-        <div className="cell auto">
-          <img src='./images/revButler2.png' alt='Reverse butler' style={{flex: 1,
+        <div className="cell auto" style={{backgroundImage: "url('./images/revButler2.png')",
+          width: '100%',
+          height: '500px',
+           backgroundPosition: 'center',
+         backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',  
+         }}>
+          {/* <img src='./images/revButler2.png' alt='Reverse butler' style={{flex: 1,
             width: '100%',
             height: '100%',
-            resizeMode: 'cover'}}/>
+            resizeMode: 'cover'}}/> */}
         </div>
   </div>
     

@@ -6,34 +6,12 @@ import ListenNoteContainer from '../components/ListenNoteContainer'
 
 function Home() {   
 
-
-// // for (i = 0; i < genres.length; i++) {
-// //     render() { 
   return (   
 <div>
 
-<div className="columns sticky-footer-css-body text-center" style={{backgroundImage: "url('./images/BlownAway.jpg')",
-           backgroundPosition: 'center',
-           backgroundSize: 'cover',
-           backgroundRepeat: 'no-repeat', 
-           WebkitBackgroundSize:'cover', 
-           MozBackgroundSize:'cover', 
-           OBackgroundSize:'cover', 
-         }}>
+<div className="columns sticky-footer-css-body text-center" style={{ overflow:'auto'}}>
 
-<br/>
 <ListenNoteContainer> </ListenNoteContainer>
-
- 
- 
-<br/> 
-
-
-
-
-<br/>
-
-
 
   </div> 
 

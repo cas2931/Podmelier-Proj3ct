@@ -1,68 +1,97 @@
 import React, { Component } from "react";
-import LNAPI from "../../utils/LNAPI";  
+import LNAPI from "../../utils/LNAPI";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import GridListTileBar from "@material-ui/core/GridListTileBar";
+import IconButton from "@material-ui/core/IconButton"; 
+import InfoSharpIcon from '@material-ui/icons/InfoSharp'; 
+import Button from '@material-ui/core/Button';
+import WebSharpIcon from '@material-ui/icons/WebSharp'; 
+import Popover from '@material-ui/core/Popover'; 
+import Typography from '@material-ui/core/Typography'  
+import Chip from '@material-ui/core/Chip'; 
+import { PortalWithState } from 'react-portal';
 
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
 
-import tileData from '../ListenNoteContainer/tileData';
 
-class ListenNoteContainer extends Component { 
-  state = { 
-      genres: [], 
-      podcasts:[]
-  }; 
 
-  componentDidMount() { 
-    LNAPI.getAllGenres() 
-      .then(res => this.setState({ genres: res.body.genres.id}))
-      .catch(err => console.error(err));
-  }; 
 
-  handleInputChange = event => {
+class ListenNoteContainer extends Component {
+  state = {
+    genres: [],
+    podcasts: [],
+  };
+
+  componentDidMount() {
+    LNAPI.getAllGenres()
+      .then(async (res) => {
+        console.log(res.data.genres);
+        const promises = res.data.genres.map((genre) => {
+          // genre.id;
+          return LNAPI.getTopLists(genre.id);
+        });
+        const podcasts = await Promise.all(promises) 
+        console.log(podcasts)
+        this.setState({podcasts})
+      })
+      .catch((err) => console.error(err));
+  }
+
+  handleInputChange = (event) => {
     this.setState({ search: event.target.value });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
-    LNAPI.getTopLists(this.state.podcasts)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
-  };
- 
-  render() {  
-  return (
-    <div>
-      <GridList cellHeight={180}>
-        <GridListTile key="Subheader" cols={5} style={{ height: 'auto' }}> 
-                                  {/* {response.body.name} */}
-          <ListSubheader component="div">December</ListSubheader> 
-        </GridListTile>
-        {tileData.map((podcast) => (
-          <GridListTile key={podcast.image}>
-            <img src={podcast.image} alt={podcast.title} />
+  }; 
+
+  render() { 
+   
+    return (
+
+<div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden'}}>
+
+ {this.state.podcasts.map(({data}) => { return ( 
+      <GridList  flexWrap='nowrap' transform='translateZ(0)' cols={5} cellHeight={"auto"}>
+        {data.podcasts.map((podcast) => (
+          <GridListTile key={podcast.thumbnail}>
+            <img src={podcast.thumbnail} alt={podcast.title}/>
             <GridListTileBar
-              title={podcast.title}
-              // subtitle={<span>by: {tile.author}</span>}
-              actionIcon={
-                <IconButton aria-label={`info about ${podcast.website}`}>
-              
-                </IconButton>
-              }
+              title={  
+                  <IconButton aria-label={`star ${podcast.title}`}> 
+                    <a href={podcast.website} target="_blank" rel="noopener noreferrer">
+                      <WebSharpIcon fontSize = 'large' color='secondary' /> 
+                    </a> 
+                    <Chip style={{color: 'black', fontWeight: 'bold',}} label= {data.name} />   
+
+                    <PortalWithState closeOnOutsideClick closeOnEsc>
+                      {({ openPortal, closePortal, isOpen, portal }) => (
+                      <React.Fragment>
+                        <button onClick={openPortal}>
+                          <InfoSharpIcon fontSize = 'large' color ='primary'/> 
+                        </button>
+                        {portal(
+                            <div>{podcast.description}</div>
+                          )}
+                       </React.Fragment>
+                      )}
+                      </PortalWithState>
+
+                      {/* <InfoSharpIcon fontSize = 'large' color ='primary'/>  */}
+                    
+                  </IconButton> 
+                }
             />
           </GridListTile>
         ))}
-      </GridList>
-    </div>
-  );
-}  
-   
-}
-export default ListenNoteContainer;
+      </GridList> 
+ )})}  
+ </div> 
+ );
+  }
+ } 
+export default ListenNoteContainer; 
