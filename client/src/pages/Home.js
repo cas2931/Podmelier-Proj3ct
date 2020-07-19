@@ -22,11 +22,16 @@ function Home() {
          <SignupForm></SignupForm>
     </div> 
 
-    <div className="cell auto">
-      <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' top='0' bottom='0'/>
+    <div className="cell auto text-center" style={{ backgroundColor: "black", 
+        backgroundImage: "url('../images/ListenNotes-non-white-background.png')",
+        width: "100%",
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat", }}>
+      {/* <img src='./images/ListenNotes-non-white-background.png' alt='ListenNotes' top='0' bottom='0'/> */}
     </div>
 
-    <div className="cell auto">
+    <div className="cell auto text-center">
          <LoginForm></LoginForm>
     </div>
   </div>
