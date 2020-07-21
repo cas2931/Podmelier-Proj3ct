@@ -65,7 +65,7 @@ passport.use(
         passwordField: "password",
         passReqToCallback: true, // allows us to pass back the entire request to the callback
       },
-      function(req,res, email, password) {
+      function(req,email, password,done) {
         // callback with email and password from our form
         // find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
@@ -76,14 +76,14 @@ passport.use(
           console.log("password", password)
           // if no user is found, return the message
           if (!user)
-            return  // req.flash is the way to set flashdata using connect-flash
+            return done (null,false) // req.flash is the way to set flashdata using connect-flash
           // if the user is found but the password is wrong
           if (!user.validPassword(password))
-            return 
+            return done (null,false)
               
            
           // all is well, return successful user
-          return res.send(user)
+          return done (null,user)
         })
       }
     )

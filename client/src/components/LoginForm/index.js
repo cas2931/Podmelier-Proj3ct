@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography"; 
 // import { Redirect } from 'react-router-dom'
 import Axios from 'axios'
+import { withRouter } from "react-router-dom";
 
 class LoginForm extends React.Component {
     state= {
@@ -14,7 +15,10 @@ class LoginForm extends React.Component {
   
     handleLogin = async () => {
       const {email,password} =this.state
-  const{data}= await Axios.post('/api/auth/login',{email,password}) 
+  const{data}= await Axios.post('/api/auth/login',{email,password})   
+  this.props.history.push('/user')
+  // const res= await Axios.get('/api/auth/',) 
+// console.log(res.data)
     }   
   
     handleChange=(e) => { 
@@ -72,4 +76,4 @@ class LoginForm extends React.Component {
       );
     }  
   }
-export default LoginForm;
+export default withRouter(LoginForm);

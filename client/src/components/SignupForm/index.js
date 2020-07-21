@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Axios from "axios";
+import { withRouter } from "react-router-dom";
 
 class SignupForm extends React.Component { 
   state= {
@@ -14,7 +15,8 @@ class SignupForm extends React.Component {
 
   handleSignUp = async () => {
     const {email,password} =this.state
-const{data}= await Axios.post('/api/auth/signup',{email,password}) 
+const{data}= await Axios.post('/api/auth/signup',{email,password})  
+this.props.history.push('/')
   }   
 
   handleChange=(e) => { 
@@ -72,4 +74,4 @@ const{data}= await Axios.post('/api/auth/signup',{email,password})
     );
   }  
 }
-export default SignupForm;
+export default withRouter(SignupForm)

@@ -1,7 +1,8 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography"; 
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import TextField from "@material-ui/core/TextField"; 
+import Axios from 'axios'
 
 // import SpotifySearch from "../components/SpotifySearch";
 // import SpotifyResults from "../components/SpotifyResults";
@@ -10,6 +11,11 @@ import TextField from "@material-ui/core/TextField";
 
 class User extends React.Component {
  
+  handleLogOut = async () => {
+   
+const{data}= await Axios.get('/api/auth/logout')  
+this.props.history.push('/')
+  }   
 
   render() {
     return (
@@ -112,7 +118,9 @@ class User extends React.Component {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
-        ></div>
+        ></div> 
+        <Button onClick={this.handleLogOut} variant="contained" color="secondary">
+          Logout </Button>
       </div>
     );
   }

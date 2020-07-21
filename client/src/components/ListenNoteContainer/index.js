@@ -54,13 +54,13 @@ class ListenNoteContainer extends Component {
           return (
             <GridList
               flexWrap="nowrap"
-              transform="translateZ(0)"
+              // transform="translateZ(0)"
               cols={5}
               cellHeight={"auto"}
             >
               {data.podcasts.map((podcast) => (
                 <GridListTile key={podcast.thumbnail}>
-                  <img src={podcast.thumbnail} alt={podcast.title} />
+                  <img style={{transform:'translateY(0)'}}src={podcast.thumbnail} alt={podcast.title} />
                   <GridListTileBar
                     title={
                       <IconButton aria-label={`star ${podcast.title}`}>  
