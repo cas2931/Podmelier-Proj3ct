@@ -6,9 +6,10 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import IconButton from "@material-ui/core/IconButton";
 import InfoSharpIcon from "@material-ui/icons/InfoSharp";
 import WebSharpIcon from "@material-ui/icons/WebSharp";
-import Popup from "reactjs-popup";
-import Chip from "@material-ui/core/Chip";
-import Typography from "@material-ui/core/Typography";
+
+import CategorySharpIcon from '@material-ui/icons/CategorySharp';
+import "react-tippy/dist/tippy.css";
+import { Tooltip } from "react-tippy";
 
 class ListenNoteContainer extends Component {
   state = {
@@ -62,33 +63,31 @@ class ListenNoteContainer extends Component {
                   <img src={podcast.thumbnail} alt={podcast.title} />
                   <GridListTileBar
                     title={
-                      <IconButton aria-label={`star ${podcast.title}`}>
+                      <IconButton aria-label={`star ${podcast.title}`}>  
+                        <Tooltip
+                          title={podcast.description}
+                          position="top"
+                          trigger="click">
+                          <InfoSharpIcon fontSize="large" color="primary" />
+                        </Tooltip> 
+
+                        <Tooltip
+                          title={data.name}
+                          position="top"
+                          trigger="click"
+                        >
+                          <CategorySharpIcon style={{color:'green'}} fontSize="large" />
+                        </Tooltip>
+
                         <a
                           href={podcast.website}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <WebSharpIcon fontSize="large" color="secondary" />
-                        </a>
-                        <Chip
-                          style={{ color: "black", fontWeight: "bold" }}
-                          label={data.name}
-                        />
-                        <Popup
-                          trigger={
-                            <button>
-                              <InfoSharpIcon fontSize="large" color="primary" />
-                            </button>
-                          }
-                          modal
-                          style={{
-                            whiteSpace: "normal",
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          <Typography>{podcast.description}</Typography>
-                        </Popup>
-                        {/* <InfoSharpIcon fontSize = 'large' color ='primary'/>  */}
+                        </a> 
+
+                        
                       </IconButton>
                     }
                   />
