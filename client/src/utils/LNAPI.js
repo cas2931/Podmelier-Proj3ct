@@ -5,7 +5,7 @@ export default {
     return axios.get(
       "https://listen-api.listennotes.com/api/v2/genres?top_level_only=1",
       {
-        headers: { "X-ListenAPI-Key": process.env.REACT_APP_LN_KEY },
+        headers: { "X-ListenAPI-Key": `${process.env.REACT_APP_LN_KEY}` },
       }
     );
     // .header(process.env.REACT_APP_LN_KEY);
@@ -16,7 +16,7 @@ export default {
         id +
         "&page=2&region=us&safe_mode=0",
       {
-        headers: { "X-ListenAPI-Key": process.env.REACT_APP_LN_KEY },
+        headers: { "X-ListenAPI-Key": `${process.env.REACT_APP_LN_KEY}` },
       }
     );
     // .header(process.env.REACT_APP_LN_KEY);
