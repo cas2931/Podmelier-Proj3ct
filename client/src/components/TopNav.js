@@ -41,7 +41,7 @@ function TopNav() {
               }}
             >
               <div className="columns shrink header text-center">
-                <ul className="menu align-center">
+                {/* <ul className="menu align-center">
                   <li>
                     <Link
                       to="/"
@@ -66,7 +66,7 @@ function TopNav() {
                       User
                     </Link>
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
 

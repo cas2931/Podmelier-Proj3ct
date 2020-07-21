@@ -118,9 +118,11 @@ this.props.history.push('/')
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
-        ></div> 
-        <Button onClick={this.handleLogOut} variant="contained" color="secondary">
-          Logout </Button>
+        > 
+        <Button onClick={this.handleLogOut} variant="contained">
+        Logout </Button>
+          </div> 
+        
       </div>
     );
   }
