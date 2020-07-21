@@ -13,16 +13,15 @@ function TopNav() {
         style={{ backgroundColor: "black" }}
       >
         <div className="row expanded flex-dir-column">
-          <div className="grid-x auto">
+          <div className="grid-x fluid">
             <div
               className="cell auto"
               style={{
                 backgroundImage: "url('./images/butlerL3.jpg')",
-                width: "100%",
-                height: "550px",
                 backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
+                backgroundSize: '100% 100%', 
+                height: '550px',
+                backgroundRepeat: "no-repeat", 
               }}
             >
               {/* <img src='./images/podButler2.png' alt='Podmelier butler' style={{flex: 1,
@@ -36,7 +35,8 @@ function TopNav() {
               style={{
                 backgroundImage: "url('./images/BlownAway.jpg')",
                 backgroundPosition: "center",
-                backgroundSize: "cover",
+                backgroundSize: '100% 100%', 
+                height: '550px',
                 backgroundRepeat: "no-repeat",
               }}
             >
@@ -74,10 +74,9 @@ function TopNav() {
               className="cell auto"
               style={{
                 backgroundImage: "url('./images/butlerR3.jpg')",
-                width: "100%",
-                height: "550px",
                 backgroundPosition: "center",
-                backgroundSize: "cover",
+                backgroundSize: "100% 100%", 
+                height: '550px',
                 backgroundRepeat: "no-repeat",
               }}
             >

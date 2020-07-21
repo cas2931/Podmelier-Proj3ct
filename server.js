@@ -10,7 +10,8 @@ const passport = require("passport");
 const flash = require('connect-flash'); 
 const cookieParser = require('cookie-parser'); 
 const morgan = require('morgan') 
-const routes = require('./routes')
+const routes = require('./routes');
+const { authenticate } = require('passport');
  
 
 const app = express(); 
@@ -47,7 +48,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/podmeiler_db", 
 // Define any API routes before this runs 
 
 require('./config/passport')(passport); 
-app.use(routes)
+app.use('/api',routes)
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

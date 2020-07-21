@@ -1,27 +1,60 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
-// This file exports the Input, TextArea, and FormBtn components
+class SpotifySearch extends React.Component { 
+  constructor(){
+    super();
+    const params = this.getHashParams();
+    console.log(params);
+  }
+  getHashParams() {
+    var hashParams = {};
+    var e, r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(1);
+    e = r.exec(q)
+    while (e) {
+       hashParams[e[1]] = decodeURIComponent(e[2]);
+       e = r.exec(q);
+    }
+    return hashParams;
+  }
+  // constructor(props) {
+  //   super(props);
+  //   this.handleTermChange = this.handleTermChange.bind(this);
+  //   this.search = this.search.bind(this);
+  //   this.state = {
+  //     term: "",
+  //   };
+  // }
 
-export function Input(props) {
-  return (
-    <div className="form-group">
-      <input className="form-control" {...props} />
-    </div>
-  );
+  // handleTermChange(e) {
+  //   this.setState({ term: e.target.value });
+  // }
+
+  // search() {
+  //   this.props.onSearch(this.state.term);
+  // }
+
+  render() {
+    return (
+      <div>
+        <TextField
+          fullWidth="true"
+          style={{ backgroundColor: "white" }}
+          onChange={this.handleTermChange}
+          placeholder="Enter A Song, Album, or Artist"
+        />
+        <Button
+          variant="contained"
+          onClick={this.search}
+          className="SearchButton"
+        >
+          SEARCH
+        </Button>
+      </div>
+    );
+  }
 }
 
-export function TextArea(props) {
-  return (
-    <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
-    </div>
-  );
-}
-
-export function FormBtn(props) {
-  return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
-      {props.children}
-    </button>
-  );
-}
+export default SpotifySearch;

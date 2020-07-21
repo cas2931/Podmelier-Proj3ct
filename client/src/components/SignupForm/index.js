@@ -1,13 +1,26 @@
+
 import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Axios from "axios";
 
-class SignupForm extends React.Component {
-  handleLogin = () => {
-    //
-  };
+class SignupForm extends React.Component { 
+  state= {
+    email:'', 
+    password:''
+  } 
+
+  handleSignUp = async () => {
+    const {email,password} =this.state
+const{data}= await Axios.post('/api/auth/signup',{email,password}) 
+  }   
+
+  handleChange=(e) => { 
+    this.setState({[e.target.name]:e.target.value})
+  }
+
   render() {
     return (
       <Grid
@@ -25,31 +38,38 @@ class SignupForm extends React.Component {
           color="secondary"
           align="center"
         >
-          Sign Up/Register
-        </Typography>
-        <form onSubmit={this.handleLogin}>
+          Sign Up
+        </Typography> 
+        
           <TextField
             style={{ backgroundColor: "white" }}
             margin="normal"
-            id="email"
+            name="email"
             label="Email"
             variant="filled"
-            type="text"
+            type="text" 
+            fullWidth='true'  
+            value={this.state.email}
+            onChange={this.handleChange}
           />
           <TextField
             style={{ backgroundColor: "white" }}
             margin="normal"
-            id="standard-password-input"
+            name="password"
             label="Password"
-            type="password"
-            variant="filled"
+            type="text"
+            variant="filled" 
+            fullWidth='true' 
+            value={this.state.password} 
+            onChange={this.handleChange}
+            
           />
-          <Button type="submit" variant="contained" color="secondary">
+          <Button onClick={this.handleSignUp} variant="contained" color="secondary">
             Sign Up
           </Button>
-        </form>
+    
       </Grid>
     );
-  }
+  }  
 }
 export default SignupForm;
