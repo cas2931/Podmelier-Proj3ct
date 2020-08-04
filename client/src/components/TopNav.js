@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 function TopNav() {
   // We'll go into the Hooks API later, for now, we are just using some code
