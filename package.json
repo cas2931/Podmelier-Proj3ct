@@ -52,6 +52,6 @@
     "reactjs-popup": "^1.5.0",
     "session": "^0.1.0",
     "spotify-web-api-js": "^1.5.0",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   }
 }
